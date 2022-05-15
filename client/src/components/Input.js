@@ -1,9 +1,13 @@
 import React from "react";
-import { TextField } from "@mui/material";
+import { TextField, InputLabel, FormControl } from "@mui/material";
 
 const Input = (props) => {
   return (
-    <TextField id={props.id} label={props.label} />
+    <FormControl sx={{m: 1, width:'80%'}}>
+    <InputLabel id={props.label}>{props.label}</InputLabel>
+    <TextField id={props.id} labelId={props.label} />
+    </FormControl>
+    
   )
 };
 
