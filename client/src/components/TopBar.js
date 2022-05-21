@@ -5,6 +5,7 @@ const TopBar = () => {
   return (
     <Box
       sx={{
+        m: 5,
         display: 'flex',
         justifyContent: 'center'
       }}

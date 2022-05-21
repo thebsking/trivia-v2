@@ -17,7 +17,7 @@ const DropDown = (props) => {
   return (
     <FormControl sx={{m: 1, width: '80%'}}>
       <InputLabel id={props.label}>{props.label}</InputLabel>
-      <Select id={props.id} value={value} onChange={handleChange} defaultValue={props.label}>
+      <Select id={props.id} value={value} onChange={handleChange} labelid={props.label} defaultValue={props.label}>
         {menuItemList(props.options)}
       </Select>
     </FormControl>
