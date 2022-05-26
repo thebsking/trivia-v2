@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import './index.css';
 import AddForm from './pages/AddForm';
+import SearchForm from './pages/SearchForm'
 import TopBar from './components/TopBar';
 import reportWebVitals from './reportWebVitals';
 
@@ -9,7 +11,12 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <TopBar />
-    <AddForm />
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<SearchForm />} />
+        <Route path='add' element={<AddForm />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
