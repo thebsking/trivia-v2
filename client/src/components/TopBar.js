@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, ButtonGroup, Box } from '@mui/material';
+import { Button, ButtonGroup, Box, Link } from '@mui/material';
 
 const TopBar = () => {
   return (
@@ -11,9 +11,9 @@ const TopBar = () => {
       }}
     >
       <ButtonGroup variant='text' aria-label='nav-btns'>
-        <Button>Search Database</Button>
-        <Button>Add to Database</Button>
-        <Button disabled>Create New Game</Button>
+        <Button className='nav-btn' href='/search'>Search Database</Button>
+        <Button className='nav-btn' href='/add'>Add to Database</Button>
+        <Button disabled className='nav-btn' href='/new'>Create New Game</Button>
       </ButtonGroup>
     </Box>
   )

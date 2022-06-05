@@ -28,7 +28,7 @@ const AddForm = () => {
 
   return (
     <form action={console.log('data')}>
-    <div id="input-div">
+    <div className="center-div">
         <Dropdown label="Question Type" id="type-select" options={listOptions} />
         <Dropdown label="Category" id="cat-select" options={listOptions} />
         <Input id="q-input" label="Question" />
