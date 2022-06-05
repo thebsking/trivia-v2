@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css';
 import AddForm from './pages/AddForm';
 import SearchForm from './pages/SearchForm'
+import Home from './pages/Home';
 import TopBar from './components/TopBar';
 import reportWebVitals from './reportWebVitals';
 
@@ -13,8 +14,9 @@ root.render(
     <TopBar />
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<SearchForm />} />
+        <Route path='/' element={<Home />} />
         <Route path='add' element={<AddForm />} />
+        <Route path='search' element={<SearchForm />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

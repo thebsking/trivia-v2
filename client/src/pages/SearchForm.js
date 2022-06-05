@@ -13,7 +13,7 @@ const SearchForm = () => {
     'Easy', 'Medium', 'Hard'
   ]
   return (
-    <>
+    <div id='search-form' className="center-div">
     <form action={console.log('data')}>
     <div id="input-div">
         <Dropdown label="Question Type" id="type-select" options={listOptions} />
@@ -25,7 +25,7 @@ const SearchForm = () => {
     <div id="results">
       <ResultsContainer />
     </div>
-    </>
+    </div>
   )
 }
 
