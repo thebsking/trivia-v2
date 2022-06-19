@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from '@mui/material'
 import Dropdown from "../components/Dropdown";
 import Input from "../components/Input";
+import TopBar from '../components/TopBar'
 
 const AddForm = () => {
 
@@ -10,8 +11,8 @@ const AddForm = () => {
   const question = document.getElementById('q-input');
   const answer = document.getElementById('a-input');
 
-  function saveForm(a,b,c,d){
-    
+  function saveForm(a, b, c, d) {
+
     const newItem = {
       Type: a,
       Category: b,
@@ -27,15 +28,18 @@ const AddForm = () => {
   ]
 
   return (
-    <form action={console.log('data')}>
-    <div className="center-div">
-        <Dropdown label="Question Type" id="type-select" options={listOptions} />
-        <Dropdown label="Category" id="cat-select" options={listOptions} />
-        <Input id="q-input" label="Question" />
-        <Input id="a-input" label="Answer" />
-        <Button variant="contained" onClick={saveForm(questType, questCat, question, answer)}>Submit</Button>
-    </div>
-    </form>
+    <>
+      <TopBar />
+      <form action={console.log('data')}>
+        <div className="center-div">
+          <Dropdown label="Question Type" id="type-select" options={listOptions} />
+          <Dropdown label="Category" id="cat-select" options={listOptions} />
+          <Input id="q-input" label="Question" />
+          <Input id="a-input" label="Answer" />
+          <Button variant="contained" onClick={saveForm(questType, questCat, question, answer)}>Submit</Button>
+        </div>
+      </form>
+    </>
   )
 }
 

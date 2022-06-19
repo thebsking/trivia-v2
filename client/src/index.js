@@ -5,13 +5,11 @@ import './index.css';
 import AddForm from './pages/AddForm';
 import SearchForm from './pages/SearchForm'
 import Home from './pages/Home';
-import TopBar from './components/TopBar';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <TopBar />
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home />} />
