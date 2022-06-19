@@ -5,6 +5,8 @@ import './index.css';
 import AddForm from './pages/AddForm';
 import SearchForm from './pages/SearchForm'
 import Home from './pages/Home';
+import Locations from './pages/Locations';
+import Login from './pages/Login';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -15,6 +17,8 @@ root.render(
         <Route path='/' element={<Home />} />
         <Route path='add' element={<AddForm />} />
         <Route path='search' element={<SearchForm />} />
+        <Route path='locations' element={<Locations />} />
+        <Route path='login' element={<Login />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

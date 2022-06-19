@@ -12,6 +12,7 @@ export default function Home(){
     <div id='main' className='center-div'>
       <h1>Alan's Trivia Challenge</h1>
       <p> Today is {month + 1}/{day}/{year} </p>
+      <p>This is where I will put information about the game and what not</p>
     </div>  
     </>
   )

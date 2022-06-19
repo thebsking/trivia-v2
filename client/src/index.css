@@ -20,3 +20,8 @@ code {
   flex-direction: column;
   align-items: center;
 }
+
+.loc-card {
+  margin: 5px auto 5px auto;
+  text-align: center;
+}
