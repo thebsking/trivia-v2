@@ -1,0 +1,17 @@
+APIs
+- User login
+- User logout
+- Add question
+- search question
+- Get catgeory values from DB
+
+Layout
+- Write results conatiner
+
+
+Content
+X Add description and what not to home page
+- actual values in drop downs
+  >these will come from DB
+- add links for directions on loc cards? 
+

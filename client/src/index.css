@@ -20,7 +20,10 @@ code {
   flex-direction: column;
   align-items: center;
 }
-
+.content-div {
+  text-align: center;
+  width: 80%;
+}
 .loc-card {
   margin: 5px auto 5px auto;
   text-align: center;
@@ -28,4 +31,9 @@ code {
 
 .logo {
   max-width: 400px;
+  margin-bottom: 0;
+}
+
+.MuiCard-root {
+ box-shadow: 0 2px 2px 0 black; 
 }
