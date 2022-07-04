@@ -30,6 +30,15 @@ code {
   width: 90%;
 }
 
+.q-card {
+  margin: 10px auto 10px auto;
+  width: 90%
+}
+
+.q-card > p{
+  padding: 1px 10px 1px 10px;
+}
+
 .logo {
   max-width: 400px;
   margin-bottom: 0;
