@@ -8,6 +8,6 @@ const questionSchema = new Schema({
   range: Boolean
 })
 
-const Question = mongoose.model('Question', questionSchema);
+const Question = mongoose.model('Questions', questionSchema);
 
 module.exports = Question;

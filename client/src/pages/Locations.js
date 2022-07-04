@@ -7,52 +7,39 @@ function Locations() {
 
   const [locArray, setLocArray] = useState([]);
 
-    useEffect(() => {
-      renderLocations();
-    }, [])
+  useEffect(() => {
+    renderLocations();
+  }, [])
 
-    function renderLocations() {
-      axios.get('/api/locations')
-        .then(res => {
-          setLocArray([...res.data])
-          console.log(locArray)
-        })
-        .catch(err => console.log(err))
-    }
+  function renderLocations() {
+    return axios.get('/api/locations')
+      .then(res => {
+        setLocArray(res.data)
+        console.log(locArray)
+      })
+      .catch(err => console.log(err))
+  }
 
   return (
     <>
       <UserTopBar />
-      <div id="locs-div">
-        <Card variant="outlined" sx={{ maxWidth: 500 }} className='loc-card'>
-          <CardMedia
-            component='img'
-            alt='bar photo'
-            height='200'
-            image={process.env.PUBLIC_URL + "byrnes.jpeg"}
-          />
-          <CardContent>
-            <h2>Monday</h2>
-            <h3>Byrne's Pub - 7:00pm</h3>
-          </CardContent>
-        </Card>
-        <Card variant="outlined" sx={{ maxWidth: 500 }} className='loc-card'>
-          <h2>Tuesday</h2>
-          <h3>TBD</h3>
-        </Card>
-        <Card variant="outlined" sx={{ maxWidth: 500 }} className='loc-card'>
-          <CardMedia
-            component='img'
-            alt='bar photo'
-            height='200'
-            image={process.env.PUBLIC_URL + "planks.webp"}
-          />
-          <CardContent>
-            <h2>Wednesday</h2>
-            <h3>Plank's Bier Garten - 7:30pm</h3>
-          </CardContent>
-        </Card>
-      </div >
+      <div id='locs-div'>
+        {locArray.map(x => {
+          return (
+            <Card variant="outlined" sx={{ maxWidth: 500 }} className='loc-card'>
+              <CardMedia
+                component='img'
+                alt='bar photo'
+                height='200'
+                image={process.env.PUBLIC_URL + x.image}
+              />
+              <CardContent>
+                <h2>{x.weekday}</h2>
+                <h3>{x.name} - {x.start}</h3>
+              </CardContent>
+            </Card>)
+        })}
+      </div>
     </>
   )
 }

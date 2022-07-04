@@ -1,8 +1,6 @@
 const router = require('express').Router();
 const controller = require('../../db/questionController');
 
-router
-.route('/')
-.get(controller.findAll);
+router.get('/', controller.findAll)
 
 module.exports = router;
