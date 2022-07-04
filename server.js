@@ -2,6 +2,7 @@ const express = require('express');
 const PORT = process.env.PORT || 3001;
 const app = express();
 const mongoose = require('mongoose');
+const routes = require('./routes')
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/trivia', {
   useNewUrlParser: true,
@@ -10,9 +11,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/trivia', {
     useFindAndModify: false,
 })
 
-app.get('/api', (req, res) => {
-  res.json({message: 'Hello!!'})
-})
+app.use(routes);
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
