@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from '@mui/material'
+import { Button, ButtonGroup } from '@mui/material'
 import Dropdown from "../components/Dropdown";
 import ResultsContainer from "../components/ResultsContainer";
 import TopBar from '../components/TopBar';
@@ -13,22 +13,23 @@ const SearchForm = () => {
   const listOptionsTwo = [
     'Easy', 'Medium', 'Hard'
   ]
+
+  const catSelect = document.getElementById('cat-select');
+
   return (
     <>
       <TopBar />
-      <div id='search-form'>
-        <form action={console.log('data')}>
           <div id="input-div" className="center-div">
-            <Dropdown label="Question Type" id="type-select" options={listOptions} />
             <Dropdown label="Category" id="cat-select" options={listOptions} />
-            <Dropdown label="Difficulty" id="diff-select" options={listOptionsTwo} />
-            <Button variant="contained" onClick={console.log(listOptions)}>Search</Button>
+            <ButtonGroup variant="contained" orientation="vertical" >
+              <Button>Search by Category</Button>
+              <Button>Range Questions</Button>
+              <Button>Random</Button>
+            </ButtonGroup>
           </div>
-        </form>
         <div id="results">
           <ResultsContainer />
         </div>
-      </div>
     </>
   )
 }

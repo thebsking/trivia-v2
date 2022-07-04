@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from '@mui/material'
 import Dropdown from "../components/Dropdown";
 import Input from "../components/Input";
@@ -6,21 +6,13 @@ import TopBar from '../components/TopBar'
 
 const AddForm = () => {
 
-  const questType = document.getElementById('type-select');
-  const questCat = document.getElementById('cat-select');
-  const question = document.getElementById('q-input');
-  const answer = document.getElementById('a-input');
+  const [type, setType] = useState('');
+  const [cat, setCat] = useState('');
+  const [question, setQuestion] = useState('');
+  const [answer, setAnswer] = useState('');
 
-  function saveForm(a, b, c, d) {
-
-    const newItem = {
-      Type: a,
-      Category: b,
-      Question: c,
-      Answer: d
-    };
-
-    console.log('yesplease')
+  function handleSubmit(){
+    console.log(type, cat, question, answer);
   }
 
   const listOptions = [
@@ -30,13 +22,13 @@ const AddForm = () => {
   return (
     <>
       <TopBar />
-      <form action={console.log('data')}>
+      <form>
         <div className="center-div">
-          <Dropdown label="Question Type" id="type-select" options={listOptions} />
-          <Dropdown label="Category" id="cat-select" options={listOptions} />
-          <Input id="q-input" label="Question" />
-          <Input id="a-input" label="Answer" />
-          <Button variant="contained" onClick={saveForm(questType, questCat, question, answer)}>Submit</Button>
+          <Dropdown label="Question Type" id="type-select" options={listOptions} onChange={e => setType(e.target.value)} />
+          <Dropdown label="Category" id="cat-select" options={listOptions} onChange={e => setCat(e.target.value)} />
+          <Input id="q-input" label="Question" onChange={e => setQuestion(e.target.value)} />
+          <Input id="a-input" label="Answer" onChange={e => setAnswer(e.target.value)} />
+          <Button variant="contained" onClick={handleSubmit}>Submit</Button>
         </div>
       </form>
     </>

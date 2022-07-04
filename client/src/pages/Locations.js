@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, CardContent, CardMedia } from '@mui/material';
 import UserTopBar from "../components/UserTopBar";
+import axios from 'axios';
 
 function Locations() {
   return (

@@ -1,12 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { MenuItem, Select, InputLabel, FormControl } from "@mui/material";
 
 const DropDown = (props) => {
 
-  const [value, setValue] = useState("");
-  const handleChange = (e) => {
-    setValue(e.target.value);
-  }
 
   const menuItemList = (array) => {
     return array.map(x => <MenuItem value={x} key={x}>{x}</MenuItem>);
@@ -15,9 +11,9 @@ const DropDown = (props) => {
 
 
   return (
-    <FormControl sx={{m: 1, width: '80%'}}>
+    <FormControl sx={{ m: 1, width: '80%' }}>
       <InputLabel id={props.label}>{props.label}</InputLabel>
-      <Select id={props.id} value={value} onChange={handleChange} labelid={props.label} defaultValue={props.label}>
+      <Select id={props.id} value={props.value} onChange={props.onChange} labelid={props.label} defaultValue={''}>
         {menuItemList(props.options)}
       </Select>
     </FormControl>
