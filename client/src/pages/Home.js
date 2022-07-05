@@ -8,7 +8,7 @@ export default function Home() {
       <UserTopBar />
       <div id='main' className='center-div'>
         <h1>Alan's Trivia Challenge</h1>
-        <img className='logo' src={process.env.PUBLIC_URL + 'Alan-Logo.png'} alt='placeholder logo'></img>
+        <img className='logo' src={process.env.PUBLIC_URL + 'alogo-1.svg'} alt='placeholder logo'></img>
         <p>^this will change</p>
         <div className='content-div'>
           <p>

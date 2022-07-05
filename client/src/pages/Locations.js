@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card, CardContent, CardMedia } from '@mui/material';
+import { Card, CardContent, CardMedia, Link } from '@mui/material';
 import UserTopBar from "../components/UserTopBar";
 import axios from 'axios';
 
@@ -9,7 +9,7 @@ function Locations() {
 
   useEffect(() => {
     renderLocations();
-  }, [])
+  },)
 
   function renderLocations() {
     return axios.get('/api/locations')
@@ -24,9 +24,9 @@ function Locations() {
     <>
       <UserTopBar />
       <div id='locs-div'>
-        {locArray.map(x => {
+        {locArray.map((x, i) => {
           return (
-            <Card variant="outlined" sx={{ maxWidth: 500 }} className='loc-card'>
+            <Card variant="outlined" sx={{ maxWidth: 500 }} className='loc-card' key={i}>
               <CardMedia
                 component='img'
                 alt='bar photo'
@@ -36,6 +36,7 @@ function Locations() {
               <CardContent>
                 <h2>{x.weekday}</h2>
                 <h3>{x.name} - {x.start}</h3>
+                <Link href="#">Directions</Link>
               </CardContent>
             </Card>)
         })}

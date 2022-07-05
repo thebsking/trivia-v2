@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button } from '@mui/material'
 import Dropdown from "../components/Dropdown";
 import Input from "../components/Input";
-import TopBar from '../components/TopBar'
+import AdminTopBar from '../components/AdminTopBar'
 
 const AddForm = () => {
 
@@ -21,7 +21,7 @@ const AddForm = () => {
 
   return (
     <>
-      <TopBar />
+      <AdminTopBar />
       <form>
         <div className="center-div">
           <Dropdown label="Question Type" id="type-select" options={listOptions} onChange={e => setType(e.target.value)} />

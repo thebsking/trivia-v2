@@ -3,7 +3,7 @@ import Input from '../components/Input';
 import UserTopBar from '../components/UserTopBar';
 import { Button } from '@mui/material'
 
-function Login() {
+function Admin() {
 
   const [user,setUser] = useState('');
   const [pass,setPass] = useState('');
@@ -25,4 +25,4 @@ function Login() {
 
 }
 
-export default Login;
+export default Admin;

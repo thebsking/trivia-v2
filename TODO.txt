@@ -2,17 +2,17 @@ APIs
 - User login
 - User logout
 - Add question
-- search question
-- Get catgeory values from DB
+X search question
+X Get catgeory values from DB
 
 Layout
-- Write results 
+X Write results 
 X migrate to MongoDB
 
 
 Content
 X Add description and what not to home page
-- actual values in drop downs
+X actual values in drop downs
   >these will come from DB
 - add links for directions on loc cards? 
 

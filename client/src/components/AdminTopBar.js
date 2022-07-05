@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, ButtonGroup, Box } from '@mui/material';
 
-const TopBar = () => {
+const AdminTopBar = () => {
   return (
     <Box
       sx={{
@@ -20,4 +20,4 @@ const TopBar = () => {
   )
 };
 
-export default TopBar;
+export default AdminTopBar;
