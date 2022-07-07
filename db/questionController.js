@@ -1,6 +1,7 @@
 const db = require('../models');
 
 module.exports = {
+  //search apis
   findAll: function (req, res) {
     db.Question.find({})
       .then((data) => res.json(data))
@@ -20,6 +21,18 @@ module.exports = {
     db.Question.find({ category: req.params.id })
       .then(data => res.json(data))
       .catch(err => res.status(400).json(err))
+  },
+  //add apis
+  addQuestion: function (req, res) {
+    db.Question.create({
+      category: req.category,
+      question: req.question,
+      answer: req.answer,
+      range: req.range
+    })
+      .then(data => res.json(data))
+      .catch(err => res.status(400).json(err))
   }
+
 
 };
