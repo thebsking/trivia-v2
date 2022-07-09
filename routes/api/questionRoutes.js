@@ -1,10 +1,21 @@
 const router = require('express').Router();
 const controller = require('../../db/questionController');
 
-router.get('/', controller.findAll)
-router.get('/range', controller.rangeOnly)
-router.get('/allcats', controller.categories)
-router.get('/:id', controller.findByCat)
-router.post('/add', controller.addQuestion)
+router
+  .route('/')
+  .get(controller.findAll)
+  .post(controller.create);
+
+router
+  .route('/range')
+  .get(controller.rangeOnly)
+
+router
+  .route('/allcats')
+  .get(controller.categories)
+
+router
+  .route('/:id')
+  .get(controller.findByCat)
 
 module.exports = router;

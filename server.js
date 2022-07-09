@@ -4,16 +4,19 @@ const app = express();
 const mongoose = require('mongoose');
 const routes = require('./routes')
 
-mongoose.connect('mongodb://localhost:27017/trivia', {
+app.use(express.urlencoded({extended: true}))
+app.use(express.json());
+
+if(process.env.NODE_ENV === 'production'){
+  app.use(express.static('client/build'));
+}
+
+app.use(routes);
+
+mongoose.connect('mongodb://localhost/trivia', {
   useNewUrlParser: true,
-    useUnifiedTopology: true,
+  useUnifiedTopology: true
 })
-
-app.use('/', routes);
-
-app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);

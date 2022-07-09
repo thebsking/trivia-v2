@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const questionSchema = new Schema({
-  category: String,
-  question: String,
-  answer: String,
-  range: Boolean
+  category: {type: String},
+  question: {type: String},
+  answer: {type: String},
+  range: {type: Boolean},
 })
 
 const Question = mongoose.model('Questions', questionSchema);

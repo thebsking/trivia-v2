@@ -7,7 +7,7 @@ module.exports = {
     .catch(err => res.status(400).json(err))
   },
   addLocation: function(req, res){
-    db.Location.insertOne({
+    db.Location.create({
       "name": req.body.name,
       "weekday": req.body.weekday,
       "start": req.body.start,

@@ -23,12 +23,12 @@ module.exports = {
       .catch(err => res.status(400).json(err))
   },
   //add apis
-  addQuestion: function (req, res) {
+  create: function (req, res) {
     db.Question.create({
-      category: req.category,
-      question: req.question,
-      answer: req.answer,
-      range: req.range
+      "category": req.body.category,
+      "question": req.body.question,
+      "answer": req.body.answer,
+      "range": req.body.range
     })
       .then(data => res.json(data))
       .catch(err => res.status(400).json(err))
