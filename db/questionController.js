@@ -2,8 +2,10 @@ const db = require('../models');
 
 module.exports = {
   //search apis
-  findAll: function (req, res) {
-    db.Question.find({})
+  findTen: function (req, res) {
+    db.Question.aggregate(
+      [{ $sample: { size: 10 } }]
+    )
       .then((data) => res.json(data))
       .catch((err) => res.status(400).json(err))
   },

@@ -14,7 +14,14 @@ const AddForm = () => {
   const [listOptions, setListOptions] = useState([])
 
   function handleSubmit(){
-    axios.post('/api/question/add')
+    axios.post('/api/questions/', {
+      category: cat,
+      question: question,
+      answer: answer,
+      range: range
+    })
+    .then(res => res.json())
+    .catch(err => console.log(err))
   }
 
   useEffect(() => {

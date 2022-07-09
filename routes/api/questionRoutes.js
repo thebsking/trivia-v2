@@ -3,7 +3,7 @@ const controller = require('../../db/questionController');
 
 router
   .route('/')
-  .get(controller.findAll)
+  .get(controller.findTen)
   .post(controller.create);
 
 router
