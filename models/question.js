@@ -6,6 +6,8 @@ const questionSchema = new Schema({
   question: {type: String},
   answer: {type: String},
   range: {type: Boolean},
+  last_used: {type: String},
+  notes: {type: String}
 })
 
 const Question = mongoose.model('Questions', questionSchema);

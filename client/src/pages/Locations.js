@@ -15,7 +15,6 @@ function Locations() {
     return axios.get('/api/locations')
       .then(res => {
         setLocArray(res.data)
-        console.log(locArray)
       })
       .catch(err => console.log(err))
   }

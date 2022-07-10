@@ -8,6 +8,6 @@ const locationSchema = new Schema({
   imgae: String
 });
 
-const Location = mongoose.model('Location', locationSchema);
+const Location = mongoose.model('Locations', locationSchema);
 
 module.exports = Location;
